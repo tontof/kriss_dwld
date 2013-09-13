@@ -63,7 +63,7 @@
         for (var type in videoURL) {
             if (FORMAT_LABEL[type]) {
                 list.push(type);
-                s += list.length +' &rarr; '+FORMAT_LABEL[type]+'\n';
+                s += list.length +' => '+FORMAT_LABEL[type]+'\n';
             }
         }
         var r = parseInt(window.prompt(s),10)-1;
