@@ -9,10 +9,10 @@
     
     switch (host){
     case 'www.youtube.com':
-        src = 'http://tontof.net/kriss/dwld/youtube.php?url='+decodeURIComponent(ytplayer.config.assets.js)+'&';
+        src = '//tontof.net/kriss/dwld/youtube.php?url='+decodeURIComponent(ytplayer.config.assets.js)+'&';
         break;
     default:
-        src = "http://tontof.net/kriss/dwld/others.js?";
+        src = "//tontof.net/kriss/dwld/others.js?";
     }
 
     if (src !== '') {
