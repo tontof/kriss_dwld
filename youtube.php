@@ -5,6 +5,12 @@
 // http://tontof.net/kriss/dwld
 
 header('Content-type: text/javascript; charset=UTF-8');
+$url = '';
+if (parse_url(urldecode($_GET['url']),  PHP_URL_HOST) === 's.ytimg.com') {
+    $url = urldecode($_GET['url']);
+}
+
+if (!empty($url)) {
 ?>(function () {
   var FORMAT_LABEL={'5':'FLV 240p','18':'MP4 360p','22':'MP4 720p (HD)','34':'FLV 360p','35':'FLV 480p','37':'MP4 1080p (HD)','38':'MP4 4K (HD)','43':'WebM 360p','44':'WebM 480p','45':'WebM 720p (HD)','46':'WebM 1080p (HD)'};
   var FORMAT_TYPE={'5':'flv','18':'mp4','22':'mp4','34':'flv','35':'flv','37':'mp4','38':'mp4','43':'webm','44':'webm','45':'webm','46':'webm'};
@@ -475,7 +481,7 @@ function run() {
     var storageCode=getPref(STORAGE_CODE);
     if (storageCode && isValidSignatureCode(storageCode) && storageURL &&
         scriptURL.replace(/^https?/i,'')==storageURL.replace(/^https?/i,'')) return;
-        findSignatureCode(<?php echo json_encode(file_get_contents(urldecode($_GET['url']))); ?>);
+    findSignatureCode(<?php echo json_encode(file_get_contents($url)); ?>);
   }
   
   function updateDecodeRules(rules) {
@@ -516,4 +522,6 @@ function run() {
   }
  }
 })();
-
+<?php
+}
+?>
