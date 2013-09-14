@@ -2,6 +2,25 @@
 (function(){
     'use strict';
 
+    /* from deturl */
+    function ytSig(d) {     
+    	var e = [43, 2, 54, 0, 8, -1];
+	function swap(a, b) {
+		var c = a[0];
+		a[0] = a[b % a.length];
+		a[b] = c;
+		return a
+	};
+	var f = d.split('');
+	for (var i = 0; i < e.length; i++) {
+            var g = e[i];
+	    f = (g > 0) ? swap(f, g) : ((g == 0) ? f.reverse() : f.slice( - g))
+	}
+
+	return f.join('')
+    }
+	
+
     if (window.location.href.indexOf('/embed/') !== -1) {
         window.location.assign(window.location.href.replace('/embed/', '/watch?v='));
     } else {
@@ -49,6 +68,9 @@
               continue;
             }
             var signature=(videoFormatsPair.sig)?videoFormatsPair.sig:null;
+            if (signature==null) {
+               signature=ytSig(videoFormatsPair.s);
+            }
             if (signature!==null) {
                 videoFormatsPair.url=decodeURIComponent(url)+'&signature='+signature;
             }

@@ -3,13 +3,13 @@
 // use KrISS dwld at your own risk
 (function(){
     var
-    version = 1,
+    version = 2,
     src     = '',
     host    = window.location.hostname;
     
     switch (host){
     case 'www.youtube.com':
-        src = '//tontof.net/kriss/dwld/youtube.php?url='+decodeURIComponent(ytplayer.config.assets.js)+'&';
+        src = "//tontof.net/kriss/dwld/youtube.js?";
         break;
     default:
         src = "//tontof.net/kriss/dwld/others.js?";
