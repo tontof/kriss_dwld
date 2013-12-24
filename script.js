@@ -3,7 +3,7 @@
 // use KrISS dwld at your own risk
 (function(){
     var
-    version = 2,
+    version = 2.1,
     src     = '',
     host    = window.location.hostname;
     
