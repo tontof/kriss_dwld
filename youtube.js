@@ -2,9 +2,9 @@
 (function(){
     'use strict';
 
-    function Rk(a){a=a.split("");a=a.reverse();a=a.slice(1);a=Sk(a,1);a=a.reverse();a=Sk(a,43);a=a.reverse();a=a.slice(1);a=a.reverse();return a.join("")}
-    function Sk(a,b){var c=a[0];a[0]=a[b%a.length];a[b]=c;return a};
-    function ytSig(d){return Rk(d);}
+    function Zy(a){a=a.split("");a=a.slice(3);a=$y(a,7);a=a.reverse();a=a.slice(3);a=a.reverse();a=$y(a,14);a=$y(a,59);a=a.slice(3);a=a.reverse();return a.join("")}
+    function $y(a,b){var c=a[0];a[0]=a[b%a.length];a[b]=c;return a};
+    function ytSig(d){return Zy(d);}
 
     if (window.location.href.indexOf('/embed/') !== -1) {
         window.location.assign(window.location.href.replace('/embed/', '/watch?v='));
