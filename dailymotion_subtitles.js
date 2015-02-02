@@ -13,7 +13,7 @@
                         break;
                     } else {
                         var tmp = parseTree(element[i], value);
-                        if (typeof tmp != 'undefined') {
+                        if (typeof(tmp) != 'undefined') {
                             result = tmp;
                             break;
                         }
@@ -25,7 +25,7 @@
     
     $.each($('#container_player_main').find('param[name=flashvars]').val().split('&'),
            function(index, value){
-               if (value.startsWith('sequence')){
+               if (value.substr(0,8)=='sequence'){
                    value = unescape(value).substr(9);
                    flashvars=JSON.parse(value);
                }
