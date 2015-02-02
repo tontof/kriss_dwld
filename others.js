@@ -608,7 +608,7 @@ else if (page.url.indexOf('dailymotion.com/video') != -1) {
 
     /* Get Videos Content */
     var dmEmbed = page.url.replace(/\/video\//, "/embed/video/");
-    dmVideosContent = getMyContent (dmEmbed, 'info\\s+=\\s+\\{(.*?)\\}', false);
+    dmVideosContent = getMyContent (dmEmbed, 'info\\s+=\\s+\\{(.*?)\\}\}', false);
 
     /* Get Videos */
     if (dmVideosContent) {
